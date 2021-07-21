@@ -1,0 +1,36 @@
+@import 'normalize.css';
+* *::before *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Helvetica Neue", Helvetica, "PingFang sc", "Hiragino Sans GB", "MicrosoftYaHei", "微软雅黑", Arial, sans-serif;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  background: #fff;
+  color: #666;
+  width: 100vw;
+}
+a {
+  color: #666;
+  text-decoration: none;
+}
+.clear-fix {
+  zoom: 1;
+}
+.clear-fix::after {
+  clear: both;
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+/*# sourceMappingURL=./css.css.map */

@@ -1,0 +1,12 @@
+src：代码
+    assets：资源
+        img：图片资源
+        css：样式代码
+    compinents：组件
+        common：可以沿用的公共组件
+        content：仅在本项目使用的公共组件
+    views：视图（页面）
+    router：路由相关文件
+    store：vuex相关文件
+    common:项目内公共的js文件
+    network：网络相关

@@ -1,0 +1,23 @@
+const path = require("path");
+function resolve(dir) {
+  return path.join(__dirname, dir);
+}
+
+module.exports = {
+  chainWebpack: config => {
+    config.resolve.alias
+        .set("@", resolve("src"))
+        .set("assets", resolve("src/assets"))
+        .set("components", resolve("src/components"))
+        .set("views", resolve("src/views"))
+        .set("network", resolve("src/network"))
+        .set("common", resolve("src/common"))
+  },
+  pluginOptions: {
+    'style-resources-loader': {
+      preProcessor: 'less',
+      // 引入需要全局加载的 less 文件
+      patterns: [path.resolve(__dirname, './src/assets/css/css.less')],
+    },
+  },
+}
