@@ -16,8 +16,10 @@ module.exports = {
   pluginOptions: {
     'style-resources-loader': {
       preProcessor: 'less',
-      // 引入需要全局加载的 less 文件
-      patterns: [path.resolve(__dirname, './src/assets/css/css.less')],
+      patterns: [
+        // 'C:\\Users\\Administrator\\Desktop\\source\\Vue\\Vuejs\\supermall\\src\\assets\\css\\css.less'
+        path.resolve(__dirname, './src/assets/css/css.less')
+      ],
     },
   },
 }
