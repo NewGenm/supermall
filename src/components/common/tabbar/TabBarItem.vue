@@ -39,7 +39,7 @@ export default {
   }
 };
 </script>
-<style>
+<style scoped>
 .tab-bar-item {
   justify-content: space-around;
   text-align: center;
