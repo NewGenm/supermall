@@ -46,15 +46,16 @@ export default {
   mounted() {
     setTimeout(() => {
       // 添加图片
-      this.handleDom();
-
-      // 开启定时器
-      this.startTimer();
+      this.handleDom()
+      // this.stopTimer()
+      // 开启计时器
+      this.startTimer()    
     }, 3000);
   },
   methods: {
     // 开启计时器
     startTimer() {
+      // console.log('开启')
       // 开启计时器
       this.playTimer = window.setInterval(() => {
         this.currentIndex++,
@@ -64,6 +65,7 @@ export default {
     // 暂停计时器
     stopTimer() {
       window.clearInterval(this.playTimer);
+      // console.log('关闭')
     },
     // 滚动到正确位置
     scrollContent(currentPosition) {
@@ -111,11 +113,19 @@ export default {
 
       // 保存个数
       this.slideCount = slidesEls.length;
+      // 防止图片过多，轮播图太冗长
+      // if(slidesEls.length > 5){
+      //   this.slideCount = 5
+      // }else{
+      //   this.slideCount = slidesEls.length
+      // }
       // 向前后增加图片
       if (this.slideCount > 1) {
         let cloneFirst = slidesEls[0].cloneNode(true);
         let cloneLast = slidesEls[this.slideCount - 1].cloneNode(true);
         swiperEl.insertBefore(cloneLast, slidesEls[0]);
+        // 如果图片过多，则在中间插入
+        // swiperEl.insertBefore(cloneFirst, slidesEls[this.slideCount+1]);
         swiperEl.appendChild(cloneFirst);
         this.totalWidth = swiperEl.offsetWidth;
         // 获得swiper的style，方便修改样式，实现滚动
@@ -209,7 +219,7 @@ export default {
 #hy-swiper {
   overflow: hidden;
   position: relative;
-  height: 166px;
+  /* height: 166px; */
 }
 /* 滚动区 */
 .swiper {

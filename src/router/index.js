@@ -5,6 +5,8 @@ const Home = () => import('views/home/Home.vue')
 const Category = () => import('views/category/Category.vue')
 const Shopcart = () => import('views/shopcart/Shopcart.vue')
 const Profile = () => import('views/profile/Profile.vue')
+const Detail = () => import('views/detail/Detail.vue')
+
 
 Vue.use(Router)
 
@@ -16,20 +18,29 @@ export default new Router({
         },
         {
             path: '/home',
-            component: Home
+            component: Home,
+            meta: {footShow: true } //加了这个的route可以显示底部的选择栏
         },
         {
             path: '/category',
-            component: Category
+            component: Category,
+            meta: {footShow: true }
         },
         {
             path: '/shopcart',
-            component: Shopcart
+            component: Shopcart,
+            meta: {footShow: true }
         },
         {
             path: '/profile',
-            component: Profile
-        }
+            component: Profile,
+            meta: {footShow: true }
+        },
+        {
+            // 动态地址，每个商品有独立的iid
+            path: '/detail/:iid',
+            component: Detail
+        },
     ],
     mode: 'history'
 })

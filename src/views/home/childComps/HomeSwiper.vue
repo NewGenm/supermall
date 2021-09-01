@@ -1,9 +1,9 @@
 <template>
-  <swiper>
+  <swiper ref="swiper">
     <swiper-item v-for="(item, id) in banners" :key="id">
       <!-- item中的link和imge属性 -->
       <a :href="item.link">
-        <img :src="item.image" alt="" />
+        <img :src="item.image" alt="" @load="imgLoad" />
       </a>
     </swiper-item>
   </swiper>
@@ -14,6 +14,12 @@ import { Swiper, SwiperItem } from "components/common/swiper";
 
 export default {
   name: "HomeSwiper",
+  data() {
+    return {
+      isLoad: false,
+      useringSwiper: true
+    }
+  },
   props: {
     banners: {
       type:Array,
@@ -26,6 +32,22 @@ export default {
     Swiper,
     SwiperItem,
   },
+  methods: {
+    imgLoad() {
+      if(!this.isLoad) {
+        this.$emit('swiperImgLoad')
+        this.isLoad = true
+      }
+    },
+    stopTimer() {
+      this.$refs.swiper.stopTimer()
+      // console.log('刷新了')
+    },
+    startTimer() {
+      this.$refs.swiper.startTimer()
+    }
+    
+  }
 };
 </script>
 
