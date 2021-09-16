@@ -18,5 +18,6 @@ export default {
     for (const item of state.cartList) {
       item.checked = true
     }
-  }
+  },
+  
 }

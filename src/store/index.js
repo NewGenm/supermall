@@ -10,7 +10,16 @@ import actions from './actions.js'
 import getters from './getters';
 const store = new Vuex.Store({
   state:{
-    cartList: []
+    cartList: [],
+    userInfo: [
+      {
+        ID: 'abc',
+        name: 'genm',
+        password: '123456'
+      }
+    ],
+    userName: '未登录',
+    
   },
   // mutations的唯一目的是修改state中的状态，并且尽可能的每一个方法修改一个状态
   mutations,

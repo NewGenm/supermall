@@ -19,7 +19,7 @@ Vue.prototype.$bus = new Vue
 // 1.终端中安装fastclick  npm install fastclick
 // 2.import引入fastclick
 // 3.调用attch方法
-FastClick.attach(document.body)
+// FastClick.attach(document.body)
 
 // 图片懒加载
 // 1.安装 npm install vue-lazyload --save

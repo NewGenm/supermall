@@ -109,7 +109,11 @@ export default {
     // 前后添加图片
     handleDom() {
       let swiperEl = document.querySelector(".swiper");
-      let slidesEls = swiperEl.getElementsByClassName("slide");
+      // 解决切换路由会报错的问题(getElementsByClassName = null)
+      let slidesEls 
+      if (swiperEl.getElementsByClassName("slide") !== null) {
+        slidesEls = swiperEl.getElementsByClassName("slide");
+      }
 
       // 保存个数
       this.slideCount = slidesEls.length;

@@ -1,3 +1,4 @@
+// 防抖函数
 export function debounce(func, delay) {
   let timer = null;
   return function (...args) {
@@ -11,6 +12,18 @@ export function debounce(func, delay) {
       // 2.如果传递的参数args是素组或对象，只能使用call/apply等调用
       func.apply(this, args); 
     }, delay);
+  }
+}
+
+// 节流函数
+export function throttle(func,delay) {
+  let begin = 0
+  return function (...args) {
+    let cur = Date.now()
+    if(cur - begin >= delay) {
+      func.apply(this, args)
+      begin = cur
+    }
   }
 }
 

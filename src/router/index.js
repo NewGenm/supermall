@@ -6,6 +6,8 @@ const Category = () => import('views/category/Category.vue')
 const Shopcart = () => import('views/shopcart/Shopcart.vue')
 const Profile = () => import('views/profile/Profile.vue')
 const Detail = () => import('views/detail/Detail.vue')
+const Login = () => import('views/login/Login.vue')
+const Register = () => import('views/login/Register.vue')
 
 
 Vue.use(Router)
@@ -40,6 +42,14 @@ export default new Router({
             // 动态地址，每个商品有独立的iid
             path: '/detail/:iid',
             component: Detail
+        },
+        {
+            path: '/Login',
+            component: Login
+        },
+        {
+            path: '/Register',
+            component: Register
         },
     ],
     mode: 'history'

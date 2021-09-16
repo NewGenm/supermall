@@ -23,11 +23,37 @@ export default {
   },
 
   // 全选按钮
-   checkAll(context, payload) {
-    if(payload){
+  checkAll(context, payload) {
+    if (payload) {
       context.commit('selectAll')
-    }else{
+    } else {
       context.commit('unselectAll')
     }
+  },
+
+  // 注册账号
+  createdAccount(context, payload) {
+    return new Promise((resolve, reject) => {
+      context.state.userInfo.push(payload)
+      console.log(context.state.userInfo)
+      resolve('注册成功')
+    })
+  },
+  // 登陆账号
+  loginAccount(context, payload) {
+    return new Promise((resolve, reject) => {
+      for (const account of context.state.userInfo) {
+        console.log(account)
+        if (account.ID === payload.ID) {
+          if (account.password === payload.password) {
+            context.state.userName = account.name
+            resolve('登陆成功')
+          } else {
+            // console.log('登陆失败')
+            reject('密码错误')
+          }
+        }
+      }
+    })
   },
 }

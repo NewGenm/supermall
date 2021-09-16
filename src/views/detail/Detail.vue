@@ -236,7 +236,6 @@ export default {
 .detail {
   height: 100vh;
 }
-
 .wrapper {
   height: calc(100% - 44px);
 }
