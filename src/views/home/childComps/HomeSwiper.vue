@@ -2,7 +2,7 @@
   <swiper ref="swiper">
     <swiper-item v-for="(item, id) in banners" :key="id">
       <!-- item中的link和imge属性 -->
-      <a :href="item.link">
+      <a>
         <img :src="item.image" alt="" @load="imgLoad" />
       </a>
     </swiper-item>
