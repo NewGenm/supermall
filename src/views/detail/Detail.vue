@@ -214,19 +214,19 @@ export default {
     // 加入购物车
     addToCart() {
       //获取购物车需要展示的信息添加进去
-      const product = {}
-      product.image = this.swiperImage[0] //图片 
-      product.title = this.goods.title //标题
-      product.desc = this.goods.desc //描述
-      product.price = this.goods.realPrice //价格
-      product.iid = this.iid //id
-      product.checked = true
+      const product = {};
+      product.image = this.swiperImage[0]; //图片
+      product.title = this.goods.title; //标题
+      product.desc = this.goods.desc; //描述
+      product.price = this.goods.realPrice; //价格
+      product.iid = this.iid; //id
+      product.checked = true;
 
       // 调用actions的函数，并使用promise返回一个回调函数，监控是否完成addCart
-      this.$store.dispatch('addCart',product).then((res) => {
-        this.$toast.show('添加购物车成功', 2000)
+      this.$store.dispatch("addCart", product).then((res) => {
+        this.$toast.show("添加购物车成功", 2000);
         // console.log(this.$toast)
-      })
+      });
       // this.$store.commit('addCart',product)
     },
   },

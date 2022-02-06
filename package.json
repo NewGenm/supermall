@@ -20,6 +20,7 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
+    "http-proxy-middleware": "^2.0.2",
     "less-loader": "^7.3.0",
     "postcss-px-to-viewport": "^1.1.1",
     "style-resources-loader": "^1.4.1",

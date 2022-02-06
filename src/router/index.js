@@ -21,7 +21,7 @@ export default new Router({
         {
             path: '/home',
             component: Home,
-            meta: {footShow: true } //加了这个的route可以显示底部的选择栏
+            meta: {footShow: true } //判断属性 加了这个的route可以显示底部的选择栏
         },
         {
             path: '/category',
